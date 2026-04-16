@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getParentFolders } from "@/lib/instagramExport";
+import MobileNav from "./mobile-nav";
 
 function folderLabel(input: string): string {
   return input.replaceAll("_", " ").replace(/\b\w/g, (s) => s.toUpperCase());
@@ -20,7 +21,9 @@ export default async function DashboardLayout({
             <Link href="/" className="text-sm font-semibold tracking-wide text-zinc-800">
               Instagram Export Explorer
             </Link>
-            <nav className="pill-nav flex items-center gap-1 p-1 text-xs">
+            
+            {/* Desktop Navigation */}
+            <nav className="pill-nav hidden lg:flex items-center gap-1 p-1 text-xs">
               <Link href="/dashboard" className="rounded-full px-3 py-1.5 text-zinc-600 transition hover:bg-zinc-100">
                 Dashboard
               </Link>
@@ -31,8 +34,13 @@ export default async function DashboardLayout({
                 Tools
               </Link>
             </nav>
+
+            {/* Mobile Hamburger Menu */}
+            <MobileNav parents={parents} />
           </div>
-          <nav className="mt-3 flex flex-wrap gap-2">
+
+          {/* Desktop Folder Navigation */}
+          <nav className="mt-3 hidden lg:flex flex-wrap gap-2">
             {parents.map((folder) => (
               <Link
                 key={folder}
