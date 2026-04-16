@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getParentFolders } from "@/lib/instagramExport";
 
+export const dynamic = 'force-dynamic';
+
 function labelize(input: string): string {
   return input.replaceAll("_", " ").replace(/\b\w/g, (s) => s.toUpperCase());
 }

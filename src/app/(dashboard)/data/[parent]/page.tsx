@@ -8,6 +8,8 @@ import {
   readJsonByRelativePath,
 } from "@/lib/instagramExport";
 
+export const dynamic = 'force-dynamic';
+
 type Props = {
   params: Promise<{ parent: string }>;
   searchParams?: Promise<{ sub?: string; file?: string; view?: string }>;

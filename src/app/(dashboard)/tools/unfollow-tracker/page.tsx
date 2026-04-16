@@ -1,5 +1,7 @@
 import { buildUnfollowReport, type GenderGuess } from "@/lib/unfollowTracker";
 
+export const dynamic = 'force-dynamic';
+
 const GROUP_ORDER: GenderGuess[] = [
   "Girls",
   "Boys",

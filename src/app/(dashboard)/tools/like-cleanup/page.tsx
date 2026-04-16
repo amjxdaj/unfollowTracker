@@ -1,5 +1,7 @@
 import { buildLikeCleanupReport } from "@/lib/cleanupTools";
 
+export const dynamic = 'force-dynamic';
+
 export default async function LikeCleanupPage() {
   const report = await buildLikeCleanupReport();
 

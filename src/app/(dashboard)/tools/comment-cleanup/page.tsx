@@ -1,5 +1,7 @@
 import { buildCommentCleanupReport } from "@/lib/cleanupTools";
 
+export const dynamic = 'force-dynamic';
+
 export default async function CommentCleanupPage() {
   const report = await buildCommentCleanupReport();
 
